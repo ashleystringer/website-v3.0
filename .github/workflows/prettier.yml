@@ -17,5 +17,4 @@ jobs:
               run: npm ci --frozen-lockfile
             - name: Run Prettier
               run: | 
-                npm run prettier-ci
                 npm run prettier
