@@ -96,11 +96,11 @@ const ProgramTabSection = ({
                     >
                         {tabs.map((tab) => (
                             <div
-                                className={`program-tab-container${activeTab === tab.id ? '.active' : ''}`}
+                                key={tab.id}
+                                className={`program-tab-container${activeTab === tab.id ? 'active' : ''}`}
                             >
                                 <button
-                                    key={tab.id}
-                                    className={`program-tab-btn`}
+                                    className={`program-tab-btn${activeTab === tab.id ? 'active' : ''}`}
                                     onClick={() => setActiveTab(tab.id)}
                                 >
                                     <span className="tab-label">
@@ -108,7 +108,6 @@ const ProgramTabSection = ({
                                     </span>
                                     {activeTab === tab.id && (
                                         <>
-                                            {/*
                                             <span
                                                 className="tab-line"
                                                 aria-hidden="true"
@@ -117,7 +116,6 @@ const ProgramTabSection = ({
                                                 className="tab-dot"
                                                 aria-hidden="true"
                                             />
-                                            */}
                                         </>
                                     )}
                                 </button>
