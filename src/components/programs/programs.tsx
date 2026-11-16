@@ -109,11 +109,11 @@ const ProgramTabSection = ({
                                     {activeTab === tab.id && (
                                         <>
                                             <span
-                                                className="tab-line"
+                                                className="tab-dot"
                                                 aria-hidden="true"
                                             />
                                             <span
-                                                className="tab-dot"
+                                                className="tab-line"
                                                 aria-hidden="true"
                                             />
                                         </>
