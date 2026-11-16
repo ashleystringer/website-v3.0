@@ -103,22 +103,17 @@ const ProgramTabSection = ({
                                     className={`program-tab-btn${activeTab === tab.id ? 'active' : ''}`}
                                     onClick={() => setActiveTab(tab.id)}
                                 >
-                                    <span className="tab-label">
-                                        {tab.label}
-                                    </span>
-                                    {activeTab === tab.id && (
-                                        <>
-                                            <span
-                                                className="tab-dot"
-                                                aria-hidden="true"
-                                            />
-                                            <span
-                                                className="tab-line"
-                                                aria-hidden="true"
-                                            />
-                                        </>
-                                    )}
+                                    {tab.label}
                                 </button>
+                                {activeTab === tab.id && (
+                                    <div
+                                        className="tab-indicator"
+                                        aria-hidden="true"
+                                    >
+                                        <span className="tab-dot" />
+                                        <span className="tab-line" />
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </nav>

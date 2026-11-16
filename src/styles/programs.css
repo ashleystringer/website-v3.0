@@ -170,25 +170,24 @@
     }
 
     .program-tab-container {
-        /* no border-top — borders are mobile-only */
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
     }
 
     .program-tab-btn {
-        display: flex;
-        align-items: center;
         background: none;
         border: none;
-        /*border-top: 1px solid var(--color-border-subtle-00);*/
-        padding: var(--spacing-5, 20px) 0;
         cursor: pointer;
         font-size: var(--text-xl);
         font-weight: var(--font-weight-bold);
         font-family: var(--font-lato);
         color: var(--color-text-primary);
-        width: 100%;
         text-align: left;
-        gap: var(--spacing-4x, 16px);
         transition: color 120ms ease;
+        padding: 0;
+        z-index: 1;
     }
 
     .program-tab-btn:hover {
@@ -199,7 +198,22 @@
         color: var(--color-link-primary);
     }
 
-    .tab-label {
+    /* Absolutely positioned so the dot always starts at the same x
+       regardless of which tab label is active, keeping line width uniform */
+    .tab-indicator {
+        position: absolute;
+        left: 230px;
+        right: 0;
+        display: flex;
+        align-items: center;
+        pointer-events: none;
+    }
+
+    .tab-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--color-border-subtle-00);
         flex-shrink: 0;
     }
 
@@ -207,14 +221,6 @@
         flex: 1;
         height: 1px;
         background: var(--color-border-subtle-00);
-    }
-
-    .tab-dot {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background: var(--color-border-subtle-00);
-        flex-shrink: 0;
     }
 
     .program-accordion {
